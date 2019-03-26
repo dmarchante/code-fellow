@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Marchante Class Lab 1</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #dfdfdf;
+      }
+      p {
+        color: black;
+      }
+      .content {
+        min-height: calc(100vh - 87px);
+      }
+      .content-margin {
+        margin: 0px 50px;
+      }
+      .content-title {
+        color:#38552ddd;
+        background-color: beige;
+        padding: 10px 0;
+        height: 50px;
+        top: 0;
+      }
+      .content-body-padding {
+        padding: 10px 25px;
+      }
+      .content-body-style {
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px gray;
+      }
+      .footer {
+        background-color: #c5cf8c;
+        height: 50px;
+        padding-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main class="content">
+        <div class="content-title">
+          <h1 class="content-margin">Class 1 Lab</h1>
+        </div>
+        <div class="content-margin">
+          <p class="content-body-padding content-body-style" style="background-color: black; color: white;">What is your name?</p>
+          <p id="name" class="content-body-padding"></p>
+          <p class="content-body-padding content-body-style" style="background-color: blue; color: thistle">Where are you from?</p>
+          <p id="origin" class="content-body-padding"></p>
+          <p class="content-body-padding content-body-style" style="background-color: green; color: whitesmoke;">What is your favorite cuisine?</p>
+          <p id="cuisine" class="content-body-padding"></p>
+          <p class="content-body-padding content-body-style" style="background-color: honeydew; color: rgb(63, 63, 63);">Where do you live?</p>
+          <p id="currentLocation" class="content-body-padding"></p>
+          <p id="response" class="content-body-padding"></p>
+        </div>   
+    </main>
+    <footer class="footer">
+      <p class="content-margin">Created by David Marchante</p>
+    </footer>
+    <script>
+        const questionOne = `What is your name?`;
+        const questionTwo = (name) => `Hello ${name}, where are you from?`;
+        const questionThree = (name, origin) => `${name}, we welcome you from ${origin}. What is your favorite cuisine?`;
+        const questionFour = (name, origin, currentLocation) => `${name} from ${origin} who likes ${cuisine} food.  Where do you live?`;
+
+        let name = prompt(questionOne);
+        let origin = prompt(questionTwo(name));
+        let cuisine = prompt(questionThree(name, origin));
+        let currentLocation = prompt(questionFour(name, origin, cuisine));
+        let response = `Hello, ${name} from ${origin}! I bet there is great ${cuisine} food in ${currentLocation}?`;
+
+        alert(response);
+
+        document.getElementById('name').innerHTML = name;
+        document.getElementById('origin').innerHTML = origin;
+        document.getElementById('cuisine').innerHTML = cuisine;
+        document.getElementById('currentLocation').innerHTML = currentLocation;
+        document.getElementById('response').innerHTML = response;
+
+        console.log(`When asked their name the user responded '${name}'.`);
+        console.log(`When asked where they are from the user responded '${origin}'.`);
+        console.log(`When asked their favorite cuisine the user responded '${cuisine}'.`);
+        console.log(`When asked their curent location the user responded '${currentLocation}'.`);
+    </script>
+  </body>
+</html>
