@@ -5,23 +5,24 @@ const userNamePrompt = 'Hello, and welcome to my site! You can call me David, wh
 const thankYouMessagePrompt = 'Okay. But thank you for visiting nonetheless.';
 const errorPrompt = 'Please answer with yes/y or no/n. Note: the answers are not case-sensitive.';
 
+let error = false;
+let userName = null;
 
 this.userLogic();
 function userLogic(error) {
-  let userResponse = null;
   const userPrompt = 'Hello, and welcome to my site! You can call me David, what can I call you?';
 
   
   if(error == true) {
-    userResponse = prompt(`Please enter a value. ${userPrompt}`);
+    userName = prompt(`Please enter a value. ${userPrompt}`);
   } else {
-    userResponse = prompt(userPrompt);
+    userName = prompt(userPrompt);
   }
-  userResponseLogic(userResponse);
+  userResponseLogic(userName);
 }
 
 function userResponseLogic(response) {
-  let error = false;
+  error = false;
 
   if (response) {
     knowLogic();
@@ -34,7 +35,8 @@ function userResponseLogic(response) {
 
 function knowLogic(error) {
   let knowResponse = null;
-  const getToKnowPrompt = 'Would like to get to know me?';
+  const getToKnowPrompt = `Hey ${userName}, would like to get to know me?`;
+
   if(error == true) {
     knowResponse = prompt(`${errorPrompt} ${getToKnowPrompt}`).toLowerCase();;
   } else {
@@ -45,7 +47,7 @@ function knowLogic(error) {
 }
 
 function knowResponseLogic(response) {
-  let error = false;
+  error = false;
 
   if (response === 'yes' || response === 'y') {
     stateLogic();
@@ -74,7 +76,7 @@ function stateLogic(error) {
 }
 
 function stateResponseLogic(response) {
-  let error = false
+  error = false
 
   if (response === 'yes' || response === 'y') {
     const correctState = 'Yes! I am from Florida.';
@@ -105,7 +107,7 @@ function spanishLogic(error, state) {
 }
 
 function spanishResponseLogic(response) {
-  let error = false;
+  error = false;
 
   if (response === 'yes' || response === 'y') {
     const correctSpanish = 'Yes! I do speak Spanish.';
@@ -136,7 +138,8 @@ function frenchLogic(error, spanish) {
 }
 
 function frenchResponseLogic(response) {
-  let error = false;
+  error = false;
+
   if (response === 'yes' || response === 'y') {
     const incorrectFrench = 'I speak a a good amount of French, but not enough enough to call myself fluent.';
 
@@ -166,7 +169,8 @@ function familyOriginLogic(error, french) {
 }
 
 function familyOriginResponseLogic(response) {
-  let error = false;
+  error = false;
+
   if (response === 'yes' || response === 'y') {
     const correctFamilyOrigin = 'Yes! I am a first-generation Cuban.';
   
@@ -196,7 +200,8 @@ function foodLogic(error, familyOrigin) {
 }
 
 function foodResponseLogic(response) {
-  let error = false;
+  error = false;
+
   if (response === 'yes' || response === 'y') {
     const correctFood = 'Of course I love Cuban food.';
 
