@@ -9,9 +9,9 @@ let error = false;
 let userName = null;
 
 this.userLogic();
+
 function userLogic(error) {
   const userPrompt = 'Hello, and welcome to my site! You can call me David, what can I call you?';
-
   
   if(error == true) {
     userName = prompt(`Please enter a value. ${userPrompt}`);
