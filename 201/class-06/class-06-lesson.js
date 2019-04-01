@@ -47,5 +47,3 @@ agador.name = 'Agador Spartacus';
 agador.species = 'feline';
 agador.paws = 4;
 agador.isASweetKitten = true;
-
-agador
