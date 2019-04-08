@@ -1,9 +1,6 @@
 'use strict';
 
-let luke = {
-}
-
-// Constructor funsdtion syntax
+// Constructor function syntax
 
 // function ConstructorFunctionName (param1, param2) {
 //   this.prop1 = param1;
@@ -18,9 +15,7 @@ let luke = {
 // Student Constructor
 // ===================
 
-// let allStudents = [];
-
-// function Student
+let allStudents = [];
 
 function Student(firstName, lastName, preferredName, hometown) {
   this.course = '201d56';
@@ -31,12 +26,20 @@ function Student(firstName, lastName, preferredName, hometown) {
   this.preferredName = preferredName;
   this.hometown = hometown;
   this.codeNinja = true;
-  this.introduction = function() {
-    return `Hi, my name is ${this.firstName} ${this.lastName}, but you can call me ${this.preferredName}. I am from ${this.hometown}.`
-  }
+  allStudents.push(this);
 }
 
-const lukeInstance = new Student('Luke', 'Chandler', 'Skywalker', 'Tatooine');
+Student.prototype.employer = 'Amazon';
+Student.prototype.introduction = function() {
+  return `Hi, my name is ${this.firstName} ${this.lastName}, but you can call me ${this.preferredName}. I am from ${this.hometown}.`
+};
 
-// Constructor = how many lines
-// Each instance = line * 35
+
+new Student('Luke', 'Chandler', 'Skywalker', 'Tatooine');
+new Student('Paula', 'Thomas', 'Paula', 'Silverdale');
+new Student('Timothy', 'Bush', 'Tim', 'Seattle');
+new Student('Jennifer', 'Shin', 'Jenn', 'Narnia');
+
+console.table(allStudents);
+
+// Student Prototype Property
